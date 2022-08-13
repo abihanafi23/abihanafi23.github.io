@@ -1,0 +1,96 @@
+body {
+	margin: 0px;
+	font-family: arial;
+	background-image: url('../images/body-bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: white;
+}
+
+.container-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgba(0 ,0 ,0 ,0.5);
+	font-family: arial;
+	font-style: italic;
+	}
+
+.darken-container {
+	background-color: rgba(0, 0, 0, 0.5);
+	padding-bottom: 10%;
+}
+
+.top-header {
+	margin: 0px;
+	padding: 5px;
+	margin-left: 100px;
+	font-family: Bonheur Royale;
+	font-size: 72px;
+	font-weight: 400;
+}
+
+.navbar {
+	margin-right: 100px;
+}
+
+nav a {
+	margin: 30px;
+	text-decoration: none;
+	color: white;
+	font-size: 18px;
+	}
+
+.container-body-bg-top {
+	display: flex;
+	justify-content: space-between;
+	margin: 15% 0px;
+}
+
+.container-left {
+	width: 60%;
+	margin: 0px 5%;
+}
+
+.container-right {
+	width: 30%;
+}
+
+.prof-text {
+	color: rgb(0,150,255);
+	font-style: italic;
+	font-size: 36px;
+}
+
+.hubungi-container {
+	display: flex;
+	justify-content: center;
+}
+
+.hubungi-text {
+	font-weight: bold;
+	font-size: 18px;
+	text-align: center;
+}
+
+.button-mail {
+	margin: 30px;
+	border-radius: 2px;
+	border: none;
+	padding: 10px 30px;
+	background-color: white;
+	font-family: arial;
+	color: black;
+	font-weight: bold;
+}
+
+.button-wa {
+	margin: 30px;
+	border-radius: 2px;
+	border: none;
+	padding: 10px 30px;
+	background-color: #20D703;
+	font-family: Arial;
+	color: white;
+	font-weight: bold;
+}
