@@ -1,0 +1,182 @@
+body {
+	margin: 0px;
+	font-family: arial;
+	background-image: url('../images/body-bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: white;
+}
+
+.container-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgba(0 ,0 ,0 ,0.5);
+	font-family: arial;
+	font-style: italic;
+	}
+
+.darken-container {
+	background-color: rgba(0, 0, 0, 0.5);
+	padding-bottom: 10%;
+}
+
+.top-header {
+	margin: 0px;
+	padding: 5px;
+	margin-left: 100px;
+	font-family: Bonheur Royale;
+	font-size: 72px;
+	font-weight: 400;
+}
+
+.navbar {
+	margin-right: 100px;
+}
+
+nav a {
+	margin: 30px;
+	text-decoration: none;
+	color: white;
+	font-size: 18px;
+	}
+
+.contact-button {
+	border: none;
+	color: white;
+	background: none;
+	font-size: 18px;
+	font-style: italic;
+	cursor: pointer;
+}
+
+.container-body-bg-top {
+	display: flex;
+	justify-content: space-between;
+	margin: 15% 0px;
+}
+
+.container-left {
+	width: 60%;
+	margin: 0px 5%;
+}
+
+.container-right {
+	width: 30%;
+}
+
+.prof-text {
+	color: rgb(0,150,255);
+	font-style: italic;
+	font-size: 36px;
+}
+
+.profile-text {
+	font-weight: 600;
+	line-height: 25pt;
+}
+
+.hubungi-container {
+	display: flex;
+	justify-content: center;
+}
+
+.hubungi-container a {
+	text-decoration: none;
+}
+
+.hubungi-text {
+	font-weight: bold;
+	font-size: 18px;
+	text-align: center;
+}
+
+.button-mail {
+	display: flex;
+	align-items: center;
+	margin: 30px;
+	border-radius: 5px;
+	border: none;
+	padding: 10px 30px;
+	background-color: white;
+	font-family: arial;
+	color: black;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.button-mail img {
+	margin-right: 10px;
+}
+
+.button-wa {
+	display: flex;
+	align-items: center;
+	margin: 30px;
+	border-radius: 5px;
+	border: none;
+	padding: 10px 30px;
+	background-color: #20D703;
+	font-family: Arial;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.button-wa img {
+	margin-right: 10px;
+}
+
+.certificate-container-header {
+	display: flex;
+	justify-content: center;
+	background-color: rgba(0 ,0 ,0 ,0.5);
+	font-style: italic;
+
+}
+
+.certificate-header {
+	font-family: Bonheur Royale;
+	text-align: center;
+	font-size: 72px;
+	font-weight: 400;
+}
+
+.certificate-body {
+	padding: 10pt;;
+	background-color: rgb(170, 200, 255);
+	min-height: 500px;
+}
+
+.certificate-container-list {
+	display: flex;
+	margin-top: 10pt;
+	align-items: center;
+	border-radius: 10pt;
+	background-color: white;
+	color: black;
+	box-shadow: 2pt 2pt 2pt 2pt rgba(0 ,0 ,0 ,0.1);
+}
+
+.certificate-mini-container {
+	margin-left: 10pt;
+}
+
+.certificate-text {
+	color: grey;
+	font-weight: 400;
+	font-size: 12px;
+}
+
+.certificate-text a {
+	text-decoration: none;
+	color: rgb(0, 89, 255);
+}
+
+.footer-text {
+	padding: 20px;
+	text-align: center;
+	font-family: arial;
+	font-weight: 600;
+	background-color: rgba(0 ,0 ,0 ,0.9);
+}
