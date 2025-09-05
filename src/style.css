@@ -1,0 +1,100 @@
+@import 'tailwindcss';
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  overflow-x: hidden;
+}
+
+.alex-brush-reguler {
+  font-family: 'Alex Brush', cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Buttons */
+.mybutton {
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.mybutton-primary {
+  background-color: #00a8e8;
+  color: white;
+}
+
+.mybutton-secondary {
+  background-color: #000000;
+  color: white;
+}
+
+.mybutton-primary:hover {
+  background-color: #a2e5ff;
+}
+
+.mybutton-secondary:hover {
+  background-color: #313131;
+}
+
+/* Colors */
+.mytext-blue {
+  color: #00a8e8;
+}
+
+/* Background Shapes */
+.myshapes {
+  background-color: #00a8e8;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.myrect-md {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+}
+
+.myrect-lg {
+  width: 200px;
+  height: 200px;
+  border-radius: 40px;
+}
+
+.mycircle-sm {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
+
+.mycircle-md {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.myshapes:hover {
+  transform: scale(1.1);
+}
+
+/* Border */
+.myborder-blue {
+  border-color: #00a8e8;
+}
+
+/* Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.myanimation-spin {
+  animation: spin 10s linear infinite;
+}
