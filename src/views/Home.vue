@@ -89,14 +89,22 @@
           </div>
 
           <div class="flex gap-2 mt-10">
-            <button class="mybutton mybutton-primary flex gap-2">
+            <a
+              href="mailto:hanafi.abi50@gmail.com"
+              target="_blank"
+              class="mybutton mybutton-primary flex gap-2"
+            >
               <span class="material-symbols-outlined">mail</span>
               <span>Contact Me</span>
-            </button>
-            <button class="mybutton mybutton-secondary flex gap-2">
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1dykCi2IG8vEpGQokqWQPA5IeoSRJLZq8/view?usp=sharing"
+              target="_blank"
+              class="mybutton mybutton-secondary flex gap-2"
+            >
               <span class="material-symbols-outlined">draft</span>
               <span>Download Resume</span>
-            </button>
+            </a>
           </div>
 
           <div class="flex gap-2 mt-2">
