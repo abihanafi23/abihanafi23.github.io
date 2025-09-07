@@ -29,6 +29,8 @@
     <div class="myshapes mycircle-sm absolute top-250 right-90 -z-1"></div>
     <!-- End Background Decoration -->
 
+    <!-- Testing -->
+
     <nav
       :class="[
         'flex justify-between px-20 py-5 inset-x-0 top-0 fixed',
