@@ -179,7 +179,7 @@
             <p>
               An application for managing computer lab usage. Appointed by the Informatics
               Engineering study program, along with two other students, to develop the application
-              for 6 months, acting as Fullstack Developers.
+              for 9 months, acting as Fullstack Developers.
             </p>
             <br /><br />
             Specification :
@@ -307,7 +307,7 @@
 
       <div class="grid grid-cols-3 p-4 mx-20 border-b-2">
         <div>
-          <p class="font-bold">IT Support</p>
+          <p class="font-bold">IT Support Intern</p>
           <p class="font-semibold text-stone-400">PT. Dewa Agricoco Indonesia</p>
           <p class="mytext-blue">March 2024 - Now</p>
         </div>
