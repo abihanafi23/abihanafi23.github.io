@@ -33,7 +33,7 @@
 
     <nav
       :class="[
-        'flex justify-between px-20 py-5 inset-x-0 top-0 fixed',
+        'flex justify-between px-20 py-5 inset-x-0 top-0 fixed z-50',
         isScrolled ? 'backdrop-blur-sm shadow-lg' : '',
       ]"
     >
@@ -137,7 +137,7 @@
       </div>
     </section>
 
-    <section id="about" class="mb-40">
+    <section data-aos="fade-up" data-aos-duration="1000" id="about" class="mb-40">
       <div class="flex flex-col justify-center items-center mt-80 mb-20">
         <h2 class="text-center text-4xl">About Me</h2>
         <hr width="200px" />
@@ -307,7 +307,7 @@
 
       <div class="grid grid-cols-3 p-4 mx-20 border-b-2">
         <div>
-          <p class="font-bold">IT Support Intern</p>
+          <p class="font-bold">IT Support</p>
           <p class="font-semibold text-stone-400">PT. Dewa Agricoco Indonesia</p>
           <p class="mytext-blue">March 2024 - Now</p>
         </div>
