@@ -100,7 +100,7 @@
       @click="scrollToTop"
       :class="[
         'text-center bottom-5 right-5 fixed px-4 py-3 bg-white border-1 border-stone-200 rounded-[100%] shadow-lg transition transform duration-300 ease-in-out hover:bg-stone-200 cursor-pointer',
-        isScrolled ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
+        isScrolled ? 'opacity-100 translate-y-0 z-10' : 'opacity-0 translate-y-10',
       ]"
     >
       <span class="material-symbols-outlined text-center"> arrow_upward </span>
