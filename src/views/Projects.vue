@@ -1,1 +1,1 @@
-<template>Alamak Apa ya</template>
+<template>Alamak iseng doang nih</template>
