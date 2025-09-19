@@ -46,12 +46,30 @@
     >
       <h4 class="alex-brush-reguler text-4xl mytext-blue">Portofolio</h4>
 
-      <button
-        @click="toggleDropdown"
-        class="inline-flex justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs inset-ring-1 inset-ring-gray-300 outline-0! hover:bg-gray-50 cursor-pointer"
-      >
-        <span class="material-symbols-outlined">{{ isMenuOpen ? 'close' : 'menu_open' }} </span>
-      </button>
+      <div class="flex gap-4 items-center">
+        <button
+          @click="toggleDarkMode"
+          class="relative w-14 h-8 rounded-full transition-colors duration-500"
+          :class="isDarkMode ? 'bg-black' : 'bg-stone-100'"
+        >
+          <span
+            :class="[
+              'absolute top-1 left-1 w-6 h-6 rounded-full transition-all duration-500',
+              isDarkMode ? 'translate-x-6 mymoon' : 'bg-linear-to-tr from-stone-100 to-sky-500',
+            ]"
+          ></span>
+        </button>
+
+        <button
+          @click="toggleDropdown"
+          :class="[
+            'inline-flex justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold shadow-xs inset-ring-1 inset-ring-gray-300 outline-0! cursor-pointer',
+            isDarkMode ? 'bg-black hover:bg-stone-800' : 'bg-white hover:bg-gray-50',
+          ]"
+        >
+          <span class="material-symbols-outlined">{{ isMenuOpen ? 'close' : 'menu_open' }} </span>
+        </button>
+      </div>
 
       <!-- Dropdown Menu -->
       <transition
@@ -64,7 +82,10 @@
       >
         <div
           v-if="isMenuOpen"
-          class="w-48 fixed top-17 right-5 sm:right-20 bg-white shadow-2xl border-1 border-stone-100 rounded-lg"
+          :class="[
+            'w-48 fixed top-17 right-5 sm:right-20 shadow-2xl border-1 rounded-lg',
+            isDarkMode ? 'bg-black border-stone-800' : 'bg-white border-stone-100',
+          ]"
         >
           <a href="#about"
             ><div class="px-4 py-2 hover:bg-sky-100 hover:text-sky-500 rounded-t-lg">
@@ -99,8 +120,11 @@
       id="fab"
       @click="scrollToTop"
       :class="[
-        'text-center bottom-5 right-5 fixed px-4 py-3 bg-white border-1 border-stone-200 rounded-[100%] shadow-lg transition transform duration-300 ease-in-out hover:bg-stone-200 cursor-pointer',
+        'text-center bottom-5 right-5 fixed px-4 py-3 border-1 rounded-[100%] shadow-lg transition transform duration-300 ease-in-out cursor-pointer',
         isScrolled ? 'opacity-100 translate-y-0 z-10' : 'opacity-0 translate-y-10',
+        isDarkMode
+          ? 'bg-black border-stone-800 hover:bg-stone-600'
+          : 'bg-white border-stone-200 hover:bg-stone-200',
       ]"
     >
       <span class="material-symbols-outlined text-center"> arrow_upward </span>
@@ -268,7 +292,7 @@
         <hr width="200px" />
       </div>
 
-      <div class="bg-amber-100">
+      <div :class="isDarkMode ? 'mybg-brown' : 'bg-amber-100'">
         <div
           class="flex flex-col-reverse lg:flex-row items-center justify-around mx-5 sm:mx-20"
           data-aos="fade-up"
@@ -320,7 +344,7 @@
         </div>
       </div>
 
-      <div class="bg-rose-400 py-20">
+      <div :class="['py-20', isDarkMode ? 'bg-rose-900' : 'bg-rose-400']">
         <div
           class="flex flex-col lg:flex-row items-center justify-around mx-5 sm:mx-20 gap-10"
           data-aos="fade-up"
@@ -367,7 +391,7 @@
         </div>
       </div>
 
-      <div class="bg-sky-100 py-20">
+      <div :class="['py-20', isDarkMode ? 'bg-sky-900' : 'bg-sky-100']">
         <div
           class="flex flex-col-reverse lg:flex-row items-center justify-around mx-5 sm:mx-20 gap-10 lg:gap-0"
           data-aos="fade-up"
@@ -568,7 +592,9 @@
     </section>
 
     <section id="educations">
-      <div class="flex justify-between items-center bg-amber-100">
+      <div
+        :class="['flex justify-between items-center', isDarkMode ? 'mybg-brown' : 'bg-amber-100']"
+      >
         <div class="mx-20 my-20">
           <h2 class="text-4xl">Educations</h2>
           <hr width="180px" class="mb-20" />
@@ -618,7 +644,10 @@
         <div class="flex flex-col lg:flex-row gap-5 py-2 font-semibold">
           <GradientCard
             :colors="['#00a8e8', 'transparent']"
-            class="flex items-center gap-2 px-5 py-2 bg-stone-100 rounded-lg"
+            :class="[
+              'flex items-center gap-2 px-5 py-2 rounded-lg',
+              isDarkMode ? 'bg-black' : 'bg-stone-100',
+            ]"
             data-aos="fade-left"
             data-aos-duration="1000"
           >
@@ -628,7 +657,10 @@
 
           <GradientCard
             :colors="['#f97316', 'transparent']"
-            class="flex items-center gap-2 px-5 py-2 bg-stone-100 rounded-lg"
+            :class="[
+              'flex items-center gap-2 px-5 py-2 rounded-lg',
+              isDarkMode ? 'bg-black' : 'bg-stone-100',
+            ]"
             data-aos="fade-left"
             data-aos-duration="1200"
           >
@@ -638,7 +670,10 @@
 
           <GradientCard
             :colors="['#00a8e8', 'transparent']"
-            class="flex items-center gap-2 px-5 py-2 bg-stone-100 rounded-lg"
+            :class="[
+              'flex items-center gap-2 px-5 py-2 rounded-lg',
+              isDarkMode ? 'bg-black' : 'bg-stone-100',
+            ]"
             data-aos="fade-left"
             data-aos-duration="1400"
           >
@@ -648,7 +683,10 @@
 
           <GradientCard
             :colors="['#6366f1', 'transparent']"
-            class="flex items-center gap-2 px-5 py-2 bg-stone-100 rounded-lg"
+            :class="[
+              'flex items-center gap-2 px-5 py-2 rounded-lg',
+              isDarkMode ? 'bg-black' : 'bg-stone-100',
+            ]"
             data-aos="fade-left"
             data-aos-duration="1600"
           >
@@ -658,7 +696,10 @@
 
           <GradientCard
             :colors="['#eab308', 'transparent']"
-            class="flex items-center gap-2 px-5 py-2 bg-stone-100 rounded-lg"
+            :class="[
+              'flex items-center gap-2 px-5 py-2 rounded-lg',
+              isDarkMode ? 'bg-black' : 'bg-stone-100',
+            ]"
             data-aos="fade-left"
             data-aos-duration="1800"
           >
@@ -668,7 +709,10 @@
 
           <GradientCard
             :colors="['#00a8e8', 'transparent']"
-            class="flex items-center gap-2 px-5 py-2 bg-stone-100 rounded-lg"
+            :class="[
+              'flex items-center gap-2 px-5 py-2 rounded-lg',
+              isDarkMode ? 'bg-black' : 'bg-stone-100',
+            ]"
             data-aos="fade-left"
             data-aos-duration="2000"
           >
@@ -678,7 +722,10 @@
 
           <GradientCard
             :colors="['#f97316', 'transparent']"
-            class="flex items-center gap-2 px-5 py-2 bg-stone-100 rounded-lg"
+            :class="[
+              'flex items-center gap-2 px-5 py-2 rounded-lg',
+              isDarkMode ? 'bg-black' : 'bg-stone-100',
+            ]"
             data-aos="fade-left"
             data-aos-duration="2200"
           >
@@ -688,7 +735,10 @@
 
           <GradientCard
             :colors="['#eab308', 'transparent']"
-            class="flex items-center gap-2 px-5 py-2 bg-stone-100 rounded-lg"
+            :class="[
+              'flex items-center gap-2 px-5 py-2 rounded-lg',
+              isDarkMode ? 'bg-black' : 'bg-stone-100',
+            ]"
             data-aos="fade-left"
             data-aos-duration="2400"
           >
@@ -704,7 +754,10 @@
         <div class="flex flex-col lg:flex-row gap-5 py-2">
           <GradientCard
             :colors="['#00a8e8', 'transparent']"
-            class="flex items-center gap-2 px-5 py-2 bg-stone-100 rounded-lg"
+            :class="[
+              'flex items-center gap-2 px-5 py-2 rounded-lg',
+              isDarkMode ? 'bg-black' : 'bg-stone-100',
+            ]"
             data-aos="fade-left"
             data-aos-duration="1000"
           >
@@ -714,7 +767,10 @@
 
           <GradientCard
             :colors="['#ef4444', 'transparent']"
-            class="flex items-center gap-2 px-5 py-2 bg-stone-100 rounded-lg"
+            :class="[
+              'flex items-center gap-2 px-5 py-2 rounded-lg',
+              isDarkMode ? 'bg-black' : 'bg-stone-100',
+            ]"
             data-aos="fade-left"
             data-aos-duration="1400"
           >
@@ -724,7 +780,10 @@
 
           <GradientCard
             :colors="['#f97316', 'transparent']"
-            class="flex items-center gap-2 px-5 py-2 bg-stone-100 rounded-lg"
+            :class="[
+              'flex items-center gap-2 px-5 py-2 rounded-lg',
+              isDarkMode ? 'bg-black' : 'bg-stone-100',
+            ]"
             data-aos="fade-left"
             data-aos-duration="1800"
           >
@@ -734,7 +793,10 @@
 
           <GradientCard
             :colors="['#22c55e', 'transparent']"
-            class="flex items-center gap-2 px-5 py-2 bg-stone-100 rounded-lg"
+            :class="[
+              'flex items-center gap-2 px-5 py-2 rounded-lg',
+              isDarkMode ? 'bg-black' : 'bg-stone-100',
+            ]"
             data-aos="fade-left"
             data-aos-duration="2200"
           >
@@ -744,7 +806,10 @@
 
           <GradientCard
             :colors="['#6366f1', 'transparent']"
-            class="flex items-center gap-2 px-5 py-2 bg-stone-100 rounded-lg"
+            :class="[
+              'flex items-center gap-2 px-5 py-2 rounded-lg',
+              isDarkMode ? 'bg-black' : 'bg-stone-100',
+            ]"
             data-aos="fade-left"
             data-aos-duration="2600"
           >
@@ -754,7 +819,10 @@
 
           <GradientCard
             :colors="['#3b82f6', 'transparent']"
-            class="flex items-center gap-2 px-5 py-2 bg-stone-100 rounded-lg"
+            :class="[
+              'flex items-center gap-2 px-5 py-2 rounded-lg',
+              isDarkMode ? 'bg-black' : 'bg-stone-100',
+            ]"
             data-aos="fade-left"
             data-aos-duration="3000"
           >
@@ -769,8 +837,11 @@
         <hr width="50px" class="text-blue-400 border-1" />
         <div class="flex flex-col lg:flex-row gap-5 py-2">
           <GradientCard
-            :colors="['#000000', 'transparent']"
-            class="flex items-center gap-2 px-5 py-2 bg-stone-100 rounded-lg"
+            :colors="[isDarkMode ? '#ffffff' : '#000000', 'transparent']"
+            :class="[
+              'flex items-center gap-2 px-5 py-2 rounded-lg',
+              isDarkMode ? 'bg-black' : 'bg-stone-100',
+            ]"
             data-aos="fade-left"
             data-aos-duration="1000"
           >
@@ -781,6 +852,8 @@
               width="50"
               height="50"
               viewBox="0 0 30 30"
+              :class="isDarkMode ? 'text-white' : 'text-black'"
+              fill="currentColor"
             >
               <path
                 d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"
@@ -791,7 +864,10 @@
 
           <GradientCard
             :colors="['#eab308', 'transparent']"
-            class="flex items-center gap-2 px-5 py-2 bg-stone-100 rounded-lg"
+            :class="[
+              'flex items-center gap-2 px-5 py-2 rounded-lg',
+              isDarkMode ? 'bg-black' : 'bg-stone-100',
+            ]"
             data-aos="fade-left"
             data-aos-duration="1600"
           >
@@ -801,7 +877,10 @@
 
           <GradientCard
             :colors="['#3b82f6', 'transparent']"
-            class="flex items-center gap-2 px-5 py-2 bg-stone-100 rounded-lg"
+            :class="[
+              'flex items-center gap-2 px-5 py-2 rounded-lg',
+              isDarkMode ? 'bg-black' : 'bg-stone-100',
+            ]"
             data-aos="fade-left"
             data-aos-duration="2200"
           >
@@ -811,7 +890,10 @@
 
           <GradientCard
             :colors="['#f97316', 'transparent']"
-            class="flex items-center gap-2 px-5 py-2 bg-stone-100 rounded-lg"
+            :class="[
+              'flex items-center gap-2 px-5 py-2 rounded-lg',
+              isDarkMode ? 'bg-black' : 'bg-stone-100',
+            ]"
             data-aos="fade-left"
             data-aos-duration="2800"
           >
@@ -826,39 +908,63 @@
         <hr width="100px" class="text-blue-400 border-1" />
         <div class="flex flex-col lg:flex-row gap-5 py-2">
           <GradientCard
-            :colors="['#000000', 'transparent']"
-            class="flex items-center gap-2 px-5 py-2 bg-stone-100 rounded-lg"
+            :colors="[isDarkMode ? '#ffffff' : '#000000', 'transparent']"
+            :class="[
+              'flex items-center gap-2 px-5 py-2 rounded-lg',
+              isDarkMode ? 'bg-black' : 'bg-stone-100',
+            ]"
             data-aos="fade-left"
             data-aos-duration="1000"
           >
-            <img src="../assets/icons/troubleshoot.png" width="50px" alt="" />
+            <img
+              src="../assets/icons/troubleshoot.png"
+              width="50px"
+              :class="isDarkMode ? 'invert' : ''"
+              alt=""
+            />
             Troubleshoot
           </GradientCard>
 
           <GradientCard
-            :colors="['#000000', 'transparent']"
-            class="flex items-center gap-2 px-5 py-2 bg-stone-100 rounded-lg"
+            :colors="[isDarkMode ? '#ffffff' : '#000000', 'transparent']"
+            :class="[
+              'flex items-center gap-2 px-5 py-2 rounded-lg',
+              isDarkMode ? 'bg-black' : 'bg-stone-100',
+            ]"
             data-aos="fade-left"
             data-aos-duration="2000"
           >
-            <img src="../assets/icons/network.png" width="50px" alt="" />
+            <img
+              src="../assets/icons/network.png"
+              width="50px"
+              :class="isDarkMode ? 'invert' : ''"
+              alt=""
+            />
             Networking
           </GradientCard>
 
           <GradientCard
-            :colors="['#000000', 'transparent']"
-            class="flex items-center gap-2 px-5 py-2 bg-stone-100 rounded-lg"
+            :colors="[isDarkMode ? '#ffffff' : '#000000', 'transparent']"
+            :class="[
+              'flex items-center gap-2 px-5 py-2 rounded-lg',
+              isDarkMode ? 'bg-black' : 'bg-stone-100',
+            ]"
             data-aos="fade-left"
             data-aos-duration="3000"
           >
-            <img src="../assets/icons/mentor.png" width="50px" alt="" />
+            <img
+              src="../assets/icons/mentor.png"
+              width="50px"
+              :class="isDarkMode ? 'invert' : ''"
+              alt=""
+            />
             Teacher
           </GradientCard>
         </div>
       </div>
     </section>
 
-    <section id="certificates" class="p-20 bg-sky-500">
+    <section id="certificates" :class="['p-20', isDarkMode ? 'bg-sky-900' : 'bg-sky-500']">
       <div class="flex flex-col items-center text-white mb-20">
         <h2 class="text-4xl">Certificates</h2>
         <hr width="200px" />
@@ -866,7 +972,7 @@
 
       <div class="grid grid-rows-4 lg:grid-rows-2 lg:grid-cols-2 gap-5">
         <div
-          class="flex gap-5 px-10 py-5 bg-white rounded-[10px]"
+          :class="['flex gap-5 px-10 py-5 rounded-[10px]', isDarkMode ? 'bg-black' : 'bg-white']"
           data-aos="fade-right"
           data-aos-duration="1000"
         >
@@ -880,7 +986,7 @@
           </div>
         </div>
         <div
-          class="flex gap-5 px-10 py-5 bg-white rounded-[10px]"
+          :class="['flex gap-5 px-10 py-5 rounded-[10px]', isDarkMode ? 'bg-black' : 'bg-white']"
           data-aos="fade-left"
           data-aos-duration="1000"
         >
@@ -896,7 +1002,7 @@
           </div>
         </div>
         <div
-          class="flex gap-5 px-10 py-5 bg-white rounded-[10px]"
+          :class="['flex gap-5 px-10 py-5 rounded-[10px]', isDarkMode ? 'bg-black' : 'bg-white']"
           data-aos="fade-right"
           data-aos-duration="1000"
         >
@@ -910,7 +1016,7 @@
           </div>
         </div>
         <div
-          class="flex gap-5 px-10 py-5 bg-white rounded-[10px]"
+          :class="['flex gap-5 px-10 py-5 rounded-[10px]', isDarkMode ? 'bg-black' : 'bg-white']"
           data-aos="fade-left"
           data-aos-duration="1000"
         >
@@ -960,7 +1066,12 @@
       </div>
     </section>
 
-    <footer class="bg-stone-100 border-t-1 border-sky-400 text-sm">
+    <footer
+      :class="[
+        'border-t-1 text-sm',
+        isDarkMode ? 'bg-stone-700 border-sky-900' : 'bg-stone-100 border-sky-400',
+      ]"
+    >
       <div class="flex flex-col md:flex-row justify-between gap-5 py-2 px-20">
         <div>
           <h6 class="font-bold">Built with :</h6>
@@ -997,6 +1108,8 @@
                   width="24"
                   height="24"
                   viewBox="0 0 50 50"
+                  :class="isDarkMode ? 'text-white' : 'text-black'"
+                  fill="currentColor"
                 >
                   <path
                     d="M25,2C12.318,2,2,12.318,2,25c0,3.96,1.023,7.854,2.963,11.29L2.037,46.73c-0.096,0.343-0.003,0.711,0.245,0.966 C2.473,47.893,2.733,48,3,48c0.08,0,0.161-0.01,0.24-0.029l10.896-2.699C17.463,47.058,21.21,48,25,48c12.682,0,23-10.318,23-23 S37.682,2,25,2z M36.57,33.116c-0.492,1.362-2.852,2.605-3.986,2.772c-1.018,0.149-2.306,0.213-3.72-0.231 c-0.857-0.27-1.957-0.628-3.366-1.229c-5.923-2.526-9.791-8.415-10.087-8.804C15.116,25.235,13,22.463,13,19.594 s1.525-4.28,2.067-4.864c0.542-0.584,1.181-0.73,1.575-0.73s0.787,0.005,1.132,0.021c0.363,0.018,0.85-0.137,1.329,1.001 c0.492,1.168,1.673,4.037,1.819,4.33c0.148,0.292,0.246,0.633,0.05,1.022c-0.196,0.389-0.294,0.632-0.59,0.973 s-0.62,0.76-0.886,1.022c-0.296,0.291-0.603,0.606-0.259,1.19c0.344,0.584,1.529,2.493,3.285,4.039 c2.255,1.986,4.158,2.602,4.748,2.894c0.59,0.292,0.935,0.243,1.279-0.146c0.344-0.39,1.476-1.703,1.869-2.286 s0.787-0.487,1.329-0.292c0.542,0.194,3.445,1.604,4.035,1.896c0.59,0.292,0.984,0.438,1.132,0.681 C37.062,30.587,37.062,31.755,36.57,33.116z"
@@ -1014,6 +1127,8 @@
                   width="24"
                   height="24"
                   viewBox="0 0 30 30"
+                  :class="isDarkMode ? 'text-white' : 'text-black'"
+                  fill="currentColor"
                 >
                   <path
                     d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z"
@@ -1031,6 +1146,8 @@
                   width="24"
                   height="24"
                   viewBox="0 0 30 30"
+                  :class="isDarkMode ? 'text-white' : 'text-black'"
+                  fill="currentColor"
                 >
                   <path
                     d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"
@@ -1057,6 +1174,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const isMenuOpen = ref(false)
 const dropdownRef = ref(null)
 const isScrolled = ref(false)
+const isDarkMode = ref(false)
 
 const toggleDropdown = () => {
   isMenuOpen.value = !isMenuOpen.value
@@ -1074,6 +1192,15 @@ const handleScroll = () => {
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0 })
+}
+
+const toggleDarkMode = () => {
+  isDarkMode.value = !isDarkMode.value
+  if (isDarkMode.value == true) {
+    document.documentElement.classList.add('bg-stone-800', 'text-white')
+  } else {
+    document.documentElement.classList.remove('bg-stone-800', 'text-white')
+  }
 }
 
 onMounted(() => {

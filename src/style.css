@@ -46,6 +46,10 @@ body {
   color: #00a8e8;
 }
 
+.mybg-brown {
+  background-color: #a67b5b;
+}
+
 /* Background Shapes */
 .myshapes {
   background-color: #00a8e8;
@@ -79,6 +83,12 @@ body {
 
 .myshapes:hover {
   transform: scale(1.1);
+}
+
+.mymoon {
+  box-shadow:
+    inset -3px -2px 5px -2px #00a8e8,
+    inset -10px -4px 0 0 #57beff;
 }
 
 /* Border */
